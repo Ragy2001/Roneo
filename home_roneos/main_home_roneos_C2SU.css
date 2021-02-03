@@ -1,0 +1,569 @@
+/* C2SU */
+
+/* modifié et crée par Eol (Mayeul) en juin 2020 */
+
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    overflow-x: hidden;
+    
+    margin: 0;
+    padding: 0;
+    
+    
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+/* **********
+    HEADER
+   ********** */
+
+
+header {
+    width: 100%;
+    height: 9em;
+
+    background-color: #252C2F;
+    color: white;
+
+    display: flex;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    z-index: 20;
+    
+}
+
+
+
+
+
+            
+
+
+
+.corpoLogo {    /* logo de la corpo */
+    width: 7.5em;
+    margin-left: 5em;
+}
+
+
+
+
+
+header h1 {
+    margin-left: .5em;
+    text-transform: uppercase;
+}
+
+header h1 span {
+    font-family: 'Dancing Script', sans-serif;
+}
+
+    @media (max-width: 873px) {
+        .corpoLogo {
+            margin-left: 2em;
+        }
+    }
+
+    @media (max-width: 544px) {
+        .corpoLogo {
+            display: none;
+        }
+        
+        header h1 {
+            margin-left: 2em;
+        }
+    }
+
+    @media (max-width: 414px) {
+        
+        header h1 {
+            margin-left: 1.5em;
+        }
+    }
+
+
+
+
+
+
+
+.iconHeader {   /* div avec les réseaux et le profil à droite du header */
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+    .userProfile {   /* profil */
+        
+        border-radius: 100vh;
+        background-color: white;
+        padding: 8px 12px;
+
+
+    
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 200;
+        
+
+    }
+
+    .userProfile a {
+        display: flex;
+        align-items: center;
+        color: #252C2F;
+    }
+
+    .userProfile ion-icon {
+        color: #252C2F;
+        position: relative;
+    }
+
+    @media (max-width: 591px) {
+        .userProfile {
+            border-radius: 50%;
+            width: 2.5em;
+        }
+
+        .userProfile a p {
+            display: none;
+        }
+
+        .userProfile a ion-icon {
+            font-size: 22px;
+            margin-left: .2em;
+        }
+    }
+
+    @media (max-width: 414px) {
+        .userProfile {
+            margin-left: .4em;
+        }
+    }
+
+    
+
+
+
+    .socialMedia {  /* réseaux */
+        border-radius: 100vh;
+
+
+        margin-left: 1.5em;
+        margin-right: 4em;
+        
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .socialMedia a {
+        text-transform: uppercase;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 200;
+
+        position: relative;
+
+    }
+
+    .socialMedia a::after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        height: .6px;
+        background-color: white;
+    
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 450ms ease;
+    
+    }
+    
+    .socialMedia a:hover::after {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+
+
+
+    @media (max-width: 831px) {
+        
+
+        .socialMedia {
+            display: none;
+        }
+
+        .userProfile {
+            margin-right: 3em;
+        }
+    }
+
+
+
+
+
+
+
+main {
+    margin-top: 11em;
+    margin-bottom: 2em;
+}
+
+main h1 {
+    margin-left: 1.8em;
+    margin-bottom: 1em;
+    font-weight: 600;
+}
+
+@media (max-width: 372px) {
+    main h1 {
+        margin-left: 1em;
+    }
+}
+
+main label {
+    margin-left: 3.2em;
+    margin-right: 1em;
+}
+
+main select {
+    padding: .3em;
+    border-radius: 2px;
+}
+
+main select option {
+    border-radius: 2px;
+}
+
+@media (max-width: 586px) {
+    main label {
+        margin-left: 2em;
+    }
+}
+
+@media (max-width: 510px) {
+    main select {
+        margin-left: 2em;
+        margin-top: 1em;
+    }
+}
+
+@media (max-width: 343px) {
+    main select {
+        width: 17em;
+    }
+}
+
+
+
+
+main nav {
+    margin-top: 6em;
+    display: flex;
+    margin-bottom: 3em;
+}
+
+main nav h2 {
+    
+    margin-left: 3em;
+    
+    border-radius: 100vh;
+    width: 10em;
+    font-size: 16px;
+    text-align: center;
+    background-color: #252C2F;
+    color: white;
+    cursor: pointer;
+
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 8px 12px;
+
+}
+
+@media (max-width: 462px) {
+    main nav {
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    main nav h2 {
+        margin-left: 0;
+        margin-bottom: 1em;
+    }
+}
+
+.currentTab {
+    font-weight: bolder;
+}
+
+
+
+.roneos-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 2em;
+    margin-left: 2em;
+    margin-right: 1em;
+}
+
+
+
+.roneoFile {
+    width: 13em;
+    height: 17em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    border-radius: 8px;
+   
+
+    margin-right: 1.2em;
+}
+
+.roneoFile:hover {
+    animation-name: shadowEffect;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards
+}
+
+
+
+@keyframes shadowEffect {
+    from {
+        box-shadow: 0
+    }
+
+    to {
+        box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1), 0px 1px 3px 0px rgba(0, 0, 0, 0.08)
+    }
+}
+
+.roneoFile p:nth-child(1) {
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 1.2em;
+}
+
+.roneoFile p:nth-child(3) {
+    text-align: center;
+    padding: .4em;
+}
+
+.roneoFile img {
+    width: 5em;
+    margin-bottom: 1.2em;
+    
+}
+
+.roneoFile ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.roneoFile ul li ion-icon {
+   background-color: #9F3378;
+   font-size: 20px; 
+   color: white;
+   margin-top: 1em;
+   padding: .3em;
+   text-align: center;
+   width: 1em;
+   height: 1em;
+   border-radius: 50%;
+   cursor: pointer;
+
+   transition: transform 250ms cubic-bezier(.68,-0.55,.27,1.55);;
+}
+
+.roneoFile ul li ion-icon:hover {
+    transform: scale(1.15);
+}
+
+.roneoFile ul li ion-icon:first-child {
+    margin-right: .2em;
+}
+
+.roneoFile ul li ion-icon:last-child {
+    margin-left: .2em;
+}
+
+
+
+@media (max-width: 898px) {
+    .roneos-content {
+        justify-content: center;
+        margin-right: 0;
+        margin-left: .3em;
+    }
+}
+
+@media (max-width: 462px) {
+    .roneos-content {
+        margin-left: .5em;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* **********
+    FOOTER
+   ********** */   
+
+
+    footer {
+        background-color: #384447;
+        height: 3em;
+        width: 100vw;
+
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        color: white;
+
+    }
+
+    footer p {
+        padding-left: .3em;
+        padding-right: .3em;
+    }
+    
+    footer ul {
+        display: none;
+    }
+    
+    footer a {
+        color: #9F3378;
+        transition: filter 300ms ease;
+    }
+    
+    footer p a:hover {
+        filter: brightness(1.2);
+    }
+
+    @media (max-width: 831px) {
+        footer {
+            margin-left: 0;
+            flex-direction: column;
+            height: 6em;
+        }
+
+        footer ul {
+            display: flex;
+            list-style-type: none;
+            justify-content: center;
+
+            margin-bottom: 1em;
+        }
+
+        footer ul li {
+            background-color: white;
+            height: 2em;
+            width: 2em;
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+        }
+
+        footer ul li a::after {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 150%;
+            top: -.3em;
+            left: -.3em;
+            background-color: transparent;
+        }
+
+        footer ul li a {
+            transition: transform 500ms ease;
+        }
+
+        footer ul li:hover > a {
+            transform: rotate(360deg);
+        }
+
+        footer ul li:first-child {
+            margin-right: .5em;
+        }
+
+        footer ul li:last-child {
+            margin-left: .5em;
+        }
+
+        footer ul li:first-child a {
+            color: #3b5998;
+        }
+
+        footer ul li:last-child a {
+            color: #00acee;
+        }
+    }
+
+    @media (max-width: 410px) {
+        footer {
+            height: 9em;
+        }
+    }
+
+    @media (max-width: 395px) {
+        footer p {
+            text-align: center;
+        }
+    }

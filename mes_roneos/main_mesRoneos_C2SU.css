@@ -1,0 +1,779 @@
+/* C2SU */
+
+/* modifié et crée par Eol (Mayeul) en juin 2020 */
+
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    overflow-x: hidden;
+    
+    margin: 0;
+    padding: 0;
+
+    
+    
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+/* **********
+    HEADER
+   ********** */
+
+
+header {
+    width: 100%;
+    height: 9em;
+
+    background-color: #252C2F;
+    color: white;
+
+    display: flex;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    z-index: 20;
+    
+}
+
+
+
+
+
+            
+
+
+
+.corpoLogo {    /* logo de la corpo */
+    width: 7.5em;
+    margin-left: 5em;
+}
+
+
+
+
+
+header h1 {
+    margin-left: .5em;
+    text-transform: uppercase;
+}
+
+header h1 span {
+    font-family: 'Dancing Script', sans-serif;
+}
+
+    @media (max-width: 873px) {
+        .corpoLogo {
+            margin-left: 2em;
+        }
+    }
+
+    @media (max-width: 544px) {
+        .corpoLogo {
+            display: none;
+        }
+        
+        header h1 {
+            margin-left: 2em;
+        }
+    }
+
+    @media (max-width: 414px) {
+        
+        header h1 {
+            margin-left: 1.5em;
+        }
+    }
+
+
+
+
+
+
+
+.iconHeader {   /* div avec les réseaux et le profil à droite du header */
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+    .userProfile {   /* profil */
+        
+        border-radius: 100vh;
+        background-color: white;
+        padding: 8px 12px;
+
+
+    
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 200;
+        
+
+    }
+
+    .userProfile a {
+        display: flex;
+        align-items: center;
+        color: #252C2F;
+    }
+
+    .userProfile ion-icon {
+        color: #252C2F;
+        position: relative;
+    }
+
+    @media (max-width: 591px) {
+        .userProfile {
+            border-radius: 50%;
+            width: 2.5em;
+        }
+
+        .userProfile a p {
+            display: none;
+        }
+
+        .userProfile a ion-icon {
+            font-size: 22px;
+            margin-left: .2em;
+        }
+    }
+
+    @media (max-width: 414px) {
+        .userProfile {
+            margin-left: .4em;
+        }
+    }
+
+    
+
+
+
+    .socialMedia {  /* réseaux */
+        border-radius: 100vh;
+
+
+        margin-left: 1.5em;
+        margin-right: 4em;
+        
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .socialMedia a {
+        text-transform: uppercase;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 200;
+
+        position: relative;
+
+    }
+
+    .socialMedia a::after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        height: .6px;
+        background-color: white;
+    
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 450ms ease;
+    
+    }
+    
+    .socialMedia a:hover::after {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+
+
+
+    @media (max-width: 831px) {
+        .iconHam {
+            display: block;
+        }
+
+        .socialMedia {
+            display: none;
+        }
+
+        .userProfile {
+            margin-right: 2em;
+        }
+    }
+
+
+
+
+
+
+
+
+
+/* ************************
+    TABLEAUX ET CATEGORIES
+   ************************ */
+
+main {
+    margin-top: 11em;
+    margin-bottom: 2em;
+}
+
+/* titre de la page */
+main h1 {
+    margin-left: 1.8em;
+    margin-bottom: 1em;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+/* boîtes arrondies des catgégories */
+main h3 {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 1em;
+    
+    border-radius: 100vh;
+    padding: .3em .7em;
+    
+    width: 7em;
+
+    font-size: 16px;
+    text-align: center;
+    background-color: #252C2F;
+    color: white;
+    cursor: pointer;
+
+    font-weight: 400;
+    text-transform: uppercase;
+    
+
+}
+
+
+
+
+
+
+/* --------- DIV contenant les table --------- */
+.roneo-table {
+    padding: 20px;
+    display: none;
+    
+    margin-bottom: 5em;
+    
+}
+
+
+
+table {
+	width: 100%;	
+    border-collapse: collapse;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+
+    
+}
+
+td {
+	text-align: center;
+}
+
+.lignePaire {
+	background: #EEE; 
+	
+}
+
+
+
+.adminTable th {
+	border-bottom: 1px solid #444; 
+	
+	padding: 3px;
+	
+	color: black; 
+
+	text-transform: uppercase;
+}
+
+
+.adminTable td {
+	border-bottom: 1px solid #CCC;
+    padding: 3px;
+    
+}
+
+
+
+
+.adminTable tr th a {
+	text-decoration: none;
+	color: black; 
+}
+
+@media (max-width: 857px) {
+	.adminTable td,
+	.adminTable th {
+		display: block;
+	}
+
+	.adminTable tr {
+		display: block;
+		margin-bottom: 2em;
+
+		font-size: 15px;
+	}
+
+}
+
+
+.mePerso {
+    color: #9F3378;
+    font-weight: 600;
+}
+
+
+
+
+/* ------ ICONES ------ */
+
+.iconSettings ion-icon {
+	color: black;  
+	font-size: 23px;
+}
+
+
+
+.iconEdit ion-icon {
+	color: #444;  
+    font-size: 24px;
+
+    
+  
+}
+
+.iconDelete ion-icon {
+	color: red;
+	font-size: 26px;
+}
+
+.iconDownload,
+.iconUpload {
+    color: #9F3378;  
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.adminTable tr td a {
+	text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* POPUP */
+
+.backPopCover {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 50;
+    background-color: white;
+
+    visibility: hidden;
+    opacity: 0;
+
+    
+}
+
+.backPopCover.activated {
+    visibility: visible;
+    opacity: 1;
+
+    transition: visiblity 400ms ease, opacity 400ms ease;
+}
+
+
+/* popup même */
+.importPopup {
+    background-color: #252C2F;
+    border-radius: 8px;
+    width: 40%;
+    position: fixed;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.30);
+
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 60;
+
+    visibility: hidden;
+    opacity: 0;
+
+}
+
+.importPopup.active {  /* class togglée quand le popup apparaît */
+    visibility: visible;
+    opacity: 1;
+    top: 50%;
+
+    transition: visiblity 500ms ease, opacity 500ms ease, top 500ms ease;
+}
+
+.importPopup h2 {
+    color: white;
+    text-align: center;
+    margin-top: 1em;
+}
+
+.importPopup p {
+    text-align: center;
+    font-style: italic;
+    color: #b6b3b3;
+    margin-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    
+
+}
+
+
+/* div pour l'input d'importation de fichier */
+.importFile {
+    position: relative;
+    text-align: center;
+    margin-top: 4em;
+    color: white;
+    
+}
+
+input[type="file"] {
+    border: none;
+    width: auto;
+    box-shadow: none;
+    padding: 0;
+
+    position: absolute;
+    top: -1em;
+    left: 50%;
+    transform: translate(-50%);
+
+    width: 45%;
+    height: 230%;
+    opacity: 0;
+   
+    
+}
+
+@media (max-width: 1525px) {
+    input[type="file"] {
+        width: 50%;
+    }
+}
+
+@media (max-width: 1275px) {
+    input[type="file"] {
+        width: 55%;
+    }
+}
+
+@media (max-width: 1131px) {
+    input[type="file"] {
+        width: 65%;
+    }
+}
+
+@media (max-width: 971px) {
+    input[type="file"] {
+        width: 75%;
+    }
+
+    .importPopup {
+        width: 60%;
+    }
+}
+
+@media (max-width: 621px) {
+
+    .importPopup {
+        width: 80%;
+    }
+}
+
+@media (max-width: 447px) {
+
+    .importPopup {
+        width: 90%;
+    }
+}
+
+
+
+
+
+.importFile label {
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+
+.importFile label span {   /* bouton qui remplace celui par défaut */
+    border-radius: 100vh;
+    background-color: white;
+    cursor: pointer;
+    padding: 8px 12px;
+    font-style: normal;
+    color: #252C2F;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    text-transform: uppercase;
+    border: .7px solid white;
+
+    margin-left: .7em;
+
+    transition: background-color 250ms ease, color 250ms ease;
+
+
+
+    
+}
+
+.importFile label span:hover {
+    background-color: transparent;
+    border: .7px solid white;
+    color: white;
+}
+
+.importFile p {   /* pour afficher le nom du fichier importé */
+    display: inline-block;
+    margin-left: .2em;
+
+    font-style: italic;
+    color: #b6b3b3;
+}
+
+
+@media (max-width: 1543px) {
+    .importFile p {
+        display: block;
+        margin-top: 1.5em;
+        margin-left: 0;
+    }
+}
+
+
+
+
+/* bouton VALIDER */
+.importPopup button {
+    text-transform: uppercase;
+    
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 4em;
+    margin-bottom: 3em;
+     
+    border-radius: 100vh;
+    background-color: white;
+    cursor: pointer;
+    padding: 8px 12px;
+    font-style: normal;
+    color: #252C2F;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 17px;
+    border: .7px solid white;
+
+
+    transition: background-color 250ms ease, color 250ms ease;
+
+}
+
+.importPopup button:hover {
+    background-color: transparent;
+    border: .7px solid white;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* **********
+    FOOTER
+   ********** */   
+
+
+    footer {
+        background-color: #384447;
+        height: 3em;
+
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        color: white;
+
+    }
+    
+    footer ul {
+        display: none;
+    }
+
+    footer p {
+        padding-left: .3em;
+        padding-right: .3em;
+    }
+    
+    footer a {
+        color: #9F3378;
+        transition: filter 300ms ease;
+    }
+    
+    footer p a:hover {
+        filter: brightness(1.2);
+    }
+
+    @media (max-width: 831px) {
+        footer {
+            margin-left: 0;
+            flex-direction: column;
+            height: 6em;
+        }
+
+        footer ul {
+            display: flex;
+            list-style-type: none;
+            justify-content: center;
+
+            margin-bottom: 1em;
+        }
+
+        footer ul li {
+            background-color: white;
+            height: 2em;
+            width: 2em;
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+        }
+
+        footer ul li a::after {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 150%;
+            top: -.3em;
+            left: -.3em;
+            background-color: transparent;
+        }
+
+        footer ul li a {
+            transition: transform 500ms ease;
+        }
+
+        footer ul li:hover > a {
+            transform: rotate(360deg);
+        }
+
+        footer ul li:first-child {
+            margin-right: .5em;
+        }
+
+        footer ul li:last-child {
+            margin-left: .5em;
+        }
+
+        footer ul li:first-child a {
+            color: #3b5998;
+        }
+
+        footer ul li:last-child a {
+            color: #00acee;
+        }
+    }
+
+    @media (max-width: 410px) {
+        footer {
+            height: 9em;
+        }
+    }
+
+    @media (max-width: 395px) {
+        footer p {
+            text-align: center;
+        }
+    }
